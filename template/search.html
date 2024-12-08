@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Decode a Message</title>
+</head>
+<body>
+    <h1>Decode a Message from an Image</h1>
+    <form action="/decode" method="POST" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" required><br><br>
+
+        <label for="password">Enter Secret Code:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Decode</button>
+    </form>
+
+    <a href="/home">Back to Home</a>
+</body>
+</html>

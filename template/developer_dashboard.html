@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Developer Dashboard</title>
+</head>
+<body>
+    <h1>Developer Dashboard</h1>
+    <h2>Registered Users</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Registered On</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.registered_on }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Uploaded Images</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Filename</th>
+                <th>Uploaded By</th>
+                <th>Uploaded On</th>
+                <th>Encoded</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for image in images %}
+            <tr>
+                <td>{{ image.id }}</td>
+                <td>{{ image.filename }}</td>
+                <td>{{ image.user.username }}</td>
+                <td>{{ image.uploaded_on }}</td>
+                <td>{{ 'Yes' if image.is_encoded else 'No' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/home">Back to Home</a>
+</body>
+</html>
